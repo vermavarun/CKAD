@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ckadui
+  labels:
+    type: ui
+spec:
+  containers:
+  - name: pyui
+    image: vermavarun/ui:ckad
+    ports:
+    - containerPort: 80
+      protocol: TCP

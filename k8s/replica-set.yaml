@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    type: ui
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      type: ui
+  template:
+    metadata:
+      labels:
+        type: ui
+    spec:
+      containers:
+      - name: pyui
+        image: vermavarun/ui:ckad
+        ports:
+        - containerPort: 80
+          protocol: TCP
