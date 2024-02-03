@@ -5,6 +5,9 @@
 - kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
 - kubectl get pod <pod_name> -o yaml > pod.yaml
 - kubectl edit po nginx  # to edit image of pod vi editor will open
+- kubectl run pod1 --image=nginx --port=80 --expose=true # because of expose a clusterip service also will be created with same name pod1 (in this case)
+
+**Service**
 
 **Deployment**
 - kubectl create -f  k8s/pod-d.yaml # for new deployment
