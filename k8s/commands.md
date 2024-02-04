@@ -1,3 +1,7 @@
+**Arguments**
+- Docker vs K8s
+  - Entrypoint is override by command
+  - CMD is override by args
 **POD**
 - kubectl get po -A -o wide
 - kubectl run nginx --image nginx
