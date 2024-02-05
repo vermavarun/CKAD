@@ -13,6 +13,42 @@
 
 **Service**
 
+**Config Map**
+- v1
+- ConfigMap
+- kubectl create configmap <some_name> --from-literal=APP_COLOR=blue --from-literal=APP_MOD=prod
+- kubectl create configmap <some_name> --from-file=<path_of_file>
+- envFrom:
+  - configMapRef:
+     name: app-config
+- env:
+  - name: APP_COLOR
+    value-From:
+        configMapKeyRef:
+            name: app-config
+            key: APP_COLOR
+- volumes:
+- name: app-config-volume
+  configMap:
+    name: app-config
+
+**Secrets**
+- v1
+- Secret
+- envFrom:
+    - secretRef:
+        name: app-config
+- env:
+    - name: DB_Password
+      valueFrom:
+        secretKeyRef:
+            name: app-secret
+            key: DB_Password
+- volumns:
+  - name: app-secret-volume
+    secret:
+        secretName: app-secret
+
 **Deployment**
 - kubectl create -f  k8s/pod-d.yaml # for new deployment
 - kubectl apply -f k8s/pod-d.yaml # for edit deployment
@@ -23,3 +59,8 @@
 
 **Ingress**
 - controller + resources
+
+
+MIS
+- echo -n 'mysql' | base64
+- echo -n 'mysql' | base64 --decode
