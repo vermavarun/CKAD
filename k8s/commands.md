@@ -81,6 +81,10 @@
 
 **Security**
 -
+  securityContext:
+    runAsUser: 1000
+    capabilities:
+      add: ["MAC_ADMIN"]
 
 
 <hr>
@@ -94,5 +98,6 @@
 **Miscellaneous**
 - echo -n 'mysql' | base64 --decode
 - kubectl api-resources -o wide
+- kubectl exec <podname> -- <cmdname>
 
 <hr>
