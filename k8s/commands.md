@@ -2,6 +2,9 @@
 - Docker vs K8s
   - Entrypoint is override by command
   - CMD is override by args
+
+<hr>
+
 **POD**
 - kubectl get po -A -o wide
 - kubectl run nginx --image nginx
@@ -11,7 +14,11 @@
 - kubectl edit po nginx  # to edit image of pod vi editor will open
 - kubectl run pod1 --image=nginx --port=80 --expose=true # because of expose a clusterip service also will be created with same name pod1 (in this case)
 
+<hr>
+
 **Service**
+
+<hr>
 
 **Config Map**
 - v1
@@ -32,9 +39,17 @@
   configMap:
     name: app-config
 
+<hr>
+
+
 **Secrets**
 - v1
 - Secret
+- Kubectl get secrets
+- kubectl create secret generic db-secret --from-literal=DB_Host=host.com
+- What are types of secrets?
+  - Generic
+  - Opaque
 - envFrom:
     - secretRef:
         name: app-config
@@ -44,23 +59,40 @@
         secretKeyRef:
             name: app-secret
             key: DB_Password
-- volumns:
+- volume:
   - name: app-secret-volume
     secret:
         secretName: app-secret
+
+<hr>
 
 **Deployment**
 - kubectl create -f  k8s/pod-d.yaml # for new deployment
 - kubectl apply -f k8s/pod-d.yaml # for edit deployment
 - kubectl create deployment <depl_name> --image=nginx --replicas=3
 
+
+<hr>
+
 **Replica Set**
 - kubectl scale rs <rs_name> --replicas=5
+
+<hr>
+
+**Security**
+-
+
+
+<hr>
+
 
 **Ingress**
 - controller + resources
 
+<hr>
 
-MIS
-- echo -n 'mysql' | base64
+**Miscellaneous**
 - echo -n 'mysql' | base64 --decode
+- kubectl api-resources -o wide
+
+<hr>
