@@ -13,7 +13,8 @@
 - kubectl get pod {pod_name} -o yaml > pod.yaml
 - kubectl edit po nginx  # to edit image of pod vi editor will open
 - kubectl run pod1 --image=nginx --port=80 --expose=true # because of expose a clusterip service also will be created with same name pod1 (in this case)
-- kubectl logs {pod_name}
+- kubectl logs {pod_name} -c {container-name}
+- kubectl replace --force -f /tmp/kubectl-edit-***.yaml # to force replace the pod config
 
 <hr>
 
@@ -105,6 +106,8 @@
 - kubectl describe node node01
 - kubectl taint nodes foo bar:NoSchedule-
 - kubectl label node node01 color=blue
+- kubectl top node # to check max used nodes. metrics server should be deployed first
+- kubectl top pod
 - <pre>
   tolerations:
     - key: spray
