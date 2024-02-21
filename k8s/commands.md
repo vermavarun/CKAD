@@ -15,6 +15,7 @@
 - kubectl run pod1 --image=nginx --port=80 --expose=true # because of expose a clusterip service also will be created with same name pod1 (in this case)
 - kubectl logs {pod_name} -c {container-name}
 - kubectl replace --force -f /tmp/kubectl-edit-***.yaml # to force replace the pod config
+- kubectl get po -l env=dev # filter label
 
 <hr>
 
@@ -51,8 +52,13 @@
   configMap:
     name: app-config
 
-<hr>
+<hr/>
 
+**Rolling Updates**
+
+- kubectl edit deploy {DeployName}
+
+<hr/>
 
 **Secrets**
 - v1
