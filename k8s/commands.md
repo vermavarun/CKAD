@@ -98,14 +98,21 @@
 <hr>
 
 **Security**
+
 -
   securityContext:
     runAsUser: 1000
     capabilities:
       add: ["MAC_ADMIN"]
 
-
 <hr>
+
+**Network-Policies**
+- kubectl get netpol
+-
+
+
+<hr/>
 
 **Nodes**
 - kubectl get nodes
