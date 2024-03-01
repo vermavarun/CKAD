@@ -161,6 +161,10 @@
 
 **Ingress**
 - controller + resources
+- kubectl get ingress -A
+- kubectl create ingress ingress-pay --rule="/pay=pay-service:8282"
+-   annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
 
 <hr>
 
