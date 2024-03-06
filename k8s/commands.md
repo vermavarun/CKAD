@@ -88,6 +88,7 @@
 - kubectl create -f  k8s/pod-d.yaml # for new deployment
 - kubectl apply -f k8s/pod-d.yaml # for edit deployment
 - kubectl create deployment {depl_name} --image=nginx --replicas=3
+- kubectl set image {depl_name} {old-image} {new-image}
 
 
 <hr>
@@ -188,8 +189,20 @@
   - kubectl exec webapp -- cat /log/app.log
 - kubectl explain pod.spec
 
+**KubeConfig**
+- kubectl config get-contexts
+- cat /root/.kube/config
+-
 <hr>
 
 Questions?
 - What are roles and rolebindings for service accounts
-- What are storage classes
+- How to set different context from different file # kubectl config
+- How to check authorization modes
+
+
+CHECK
+- Service Accounts
+- Ingress
+- Roles
+- Role Bindings
