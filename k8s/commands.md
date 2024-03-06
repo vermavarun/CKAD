@@ -19,7 +19,7 @@
 
 <hr>
 
-**Service-Account**
+**ServiceAccount**
 - kubectl create serviceaccount {service_account_name}
 - kubectl create token {service_account_name}
 - <pre>
@@ -114,6 +114,13 @@
 
 <hr/>
 
+**PersistantVolume**
+- kubectl get netpol
+- Can only be created via yaml
+
+
+<hr/>
+
 **Nodes**
 - kubectl get nodes
 - kubectl describe node node01
@@ -163,6 +170,7 @@
 - controller + resources
 - kubectl get ingress -A
 - kubectl create ingress ingress-pay --rule="/pay=pay-service:8282"
+- kubectl edit ingress ingress-pay
 - kubectl get roles
 - kubectl get rolebindings
 -   annotations:
@@ -170,10 +178,18 @@
 
 <hr>
 
+**StorageClasses**
+- kubectl get storageclasses
+
 **Miscellaneous**
 - echo -n 'mysql' | base64 --decode
 - kubectl api-resources -o wide
 - kubectl exec {podname} -- {cmdname}
+  - kubectl exec webapp -- cat /log/app.log
 - kubectl explain pod.spec
 
 <hr>
+
+Questions?
+- What are roles and rolebindings for service accounts
+- What are storage classes
