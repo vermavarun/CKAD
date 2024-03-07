@@ -182,6 +182,26 @@
 **StorageClasses**
 - kubectl get storageclasses
 
+<hr>
+
+**UserRoles**
+- cat /etc/kubernetes/manifests/kube-apiserver.yaml
+- ps -aux | grep authorization
+- kubectl create role developer --verb=list,create,delete --resource=pods
+- kubectl create rolebinding dev-user-binding --role=developer --user=dev-user
+
+<hr>
+
+**ClusterRolesAndBindings**
+- kubectl get clusterroles
+- kubectl get clusterrolebindings
+- It is not bound to any namespace
+- kubectl create clusterrole michelle-role --verb=get,list,watch --resource=nodes
+- kubectl create clusterrolebinding michelle-role-binding --clusterrole=michelle-role --user=
+michelle
+
+<hr/>
+
 **Miscellaneous**
 - echo -n 'mysql' | base64 --decode
 - kubectl api-resources -o wide
