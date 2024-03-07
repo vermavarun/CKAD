@@ -202,12 +202,22 @@ michelle
 
 <hr/>
 
+**AdmissionController**
+- kubectl exec -it kube-apiserver-controlplane -n kube-system -- kube-apiserver -h | grep 'enable-admission-plugins'
+- Edit /etc/kubernetes/manifests/kube-apiserver.yaml and add NamespaceAutoProvision admission controller to --enable-admission-plugins list
+- ps -ef | grep kube-apiserver | grep admission-plugins
+
+
+<hr/>
+
 **Miscellaneous**
 - echo -n 'mysql' | base64 --decode
 - kubectl api-resources -o wide
 - kubectl exec {podname} -- {cmdname}
   - kubectl exec webapp -- cat /log/app.log
 - kubectl explain pod.spec
+
+<hr/>
 
 **KubeConfig**
 - kubectl config get-contexts
