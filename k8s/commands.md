@@ -216,6 +216,7 @@ michelle
 - kubectl exec {podname} -- {cmdname}
   - kubectl exec webapp -- cat /log/app.log
 - kubectl explain pod.spec
+- kubectl proxy 8001&
 
 <hr/>
 
@@ -223,6 +224,10 @@ michelle
 - kubectl config get-contexts
 - cat /root/.kube/config
 -
+<hr>
+
+**Helm**
+- helm --help
 <hr>
 
 Questions?
