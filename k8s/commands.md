@@ -228,6 +228,11 @@ michelle
 
 **Helm**
 - helm --help
+- helm search hub {PackageName}
+- helm search repo {RepoName}
+- helm pull --untar {PackageName}
+- helm install {releaseName} {chartName}
+- helm repo add {repoName} {repoPath}
 <hr>
 
 Questions?
@@ -241,3 +246,4 @@ CHECK
 - Ingress
 - Roles
 - Role Bindings
+- kubectl-convert
