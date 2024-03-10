@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: "2024-03-09T05:54:49Z"
+  generation: 1
+  name: network-deny
+  namespace: default
+  resourceVersion: "5642"
+  uid: cebd3573-789f-42d2-b918-9c012417e096
+spec:
+  podSelector:
+    matchLabels:
+      run: secure-pod
+  policyTypes:
+  - Ingress
+  ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            name: webapp-color
+      ports:
+      - protocol: TCP
+        port: 80

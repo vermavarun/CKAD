@@ -7,6 +7,7 @@
 
 **POD**
 - kubectl get po -A -o wide
+- kubectl get po --show-labels
 - kubectl run nginx --image nginx
 - kubectl describe po {pod_name}
 - kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
@@ -57,6 +58,8 @@
 **Rolling Updates**
 
 - kubectl edit deploy {DeployName}
+- kubectl set image {depl_name} {old-image} {new-image}
+- kubectl rollout undo deployment {deploy_name}
 
 <hr/>
 
@@ -213,10 +216,12 @@ michelle
 **Miscellaneous**
 - echo -n 'mysql' | base64 --decode
 - kubectl api-resources -o wide
-- kubectl exec {podname} -- {cmdname}
-  - kubectl exec webapp -- cat /log/app.log
+- kubectl exec -it {podname} -- {cmdname}
+  - kubectl exec -it webapp -- cat /log/app.log
+  - kubectl exec -it webapp -- sh
 - kubectl explain pod.spec
 - kubectl proxy 8001&
+- nc -v -z -w 2 {serviceName} {portNumber} // to ping pod from other pod
 
 <hr/>
 
@@ -247,3 +252,8 @@ CHECK
 - Roles
 - Role Bindings
 - kubectl-convert
+
+
+Notes:
+- For a pod to tag with volume on host. First create a pv then pvc and then refer pvc in pod.
+-
