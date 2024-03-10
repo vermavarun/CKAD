@@ -92,6 +92,7 @@
 - kubectl apply -f k8s/pod-d.yaml # for edit deployment
 - kubectl create deployment {depl_name} --image=nginx --replicas=3
 - kubectl set image {depl_name} {old-image} {new-image}
+- kubectl expose deployment redis --port=6379 --name messaging-service --namespace marketing
 
 
 <hr>
@@ -252,8 +253,8 @@ CHECK
 - Roles
 - Role Bindings
 - kubectl-convert
+- Network Policy
 
 
 Notes:
 - For a pod to tag with volume on host. First create a pv then pvc and then refer pvc in pod.
--
