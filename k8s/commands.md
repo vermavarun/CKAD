@@ -99,6 +99,7 @@
 
 **Replica Set**
 - kubectl scale rs {rs_name} --replicas=5
+- kubectl edit replicaset new-replica-set
 
 <hr>
 
