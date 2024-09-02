@@ -18,6 +18,8 @@
 - kubectl replace --force -f /tmp/kubectl-edit-***.yaml # to force replace the pod config
 - kubectl get po -l env=dev # filter label
 - kubectl run redis --image=redis:alpine -l tier=db
+- kubectl run nginx --image=nginx -- <arg1> <arg2> ... <argN>
+- kubectl run nginx --image=nginx --command -- <cmd> <arg1> ... <argN>
 
 <hr>
 
